@@ -1,0 +1,327 @@
+/* Reset de estilos padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Estilo do corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(105deg, #2d0875, #000);
+  color: white;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.balao {
+  margin-top: 25px;
+  margin-bottom: 45px;
+  border-radius: 10px;
+  border: 7px solid rebeccapurple;
+  border-style: double;
+  background-color: rgba(5, 5, 107, 0.212);
+}
+
+
+/* estilo do submenu */
+.profile-image {
+  object-fit: cover;
+}
+
+#toggle-button {
+  margin-left: 85%;
+  width: 90px;
+  height: 90px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#submenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1;
+  width: 350px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#submenu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#submenu li {
+  margin-bottom: 10px;
+}
+
+.upload-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.upload-link:hover {
+  color: #555;
+}
+
+
+/* Estilo do cabeçalho */
+header {
+  background-color: #333;
+  color: white;
+  padding: 100px 0;
+}
+
+.cabecalho {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.5s ease;
+}
+
+.logo img {
+  margin-left: 10px;
+  border-radius: 50px;
+  background-size: cover;
+  height: 65px;
+}
+
+
+/* Estilos para o menu */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  height: 95px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+#menu{
+  display: flex;
+  flex-direction: row;
+}
+
+#menu li{
+  border:5px solid #0d73d3;
+  border-radius: 15px;
+  margin: 10px;
+  background-color: #333;
+}
+
+
+/* Estilo do Slider*/
+.sliders {
+  position: relative;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.caption-sliders {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  margin-right: 25px;
+  float: left;
+  width: 16.66%;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
+/* Estilo da compra*/
+
+.container {
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.product {
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.price {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: green;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgb(15, 209, 15);
+  color: #000;
+}
+
+
+/* parte inferior*/
+.inferior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Estilo de Anuncio*/
+.anuncio img {
+  width: 350px;
+  height: 200px;
+}
+
+.anuncio {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.anuncio a{
+  text-align: center;
+  margin-top: -20px;
+}
+
+.btn-anuncio {
+  border-style: none none groove none;
+  width: 150px;
+}
+
+.sugestoes {
+  text-align: center;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+label {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  pointer-events: none;
+  transition: 0.2s;
+  color: #160f0f;
+}
+
+input:focus ~ label, 
+textarea:focus ~ label, 
+input:valid ~ label, 
+textarea:valid ~ label {
+  top: -20px;
+  left: 5px;
+  font-size: 12px;
+  color: #007bff;
+}
