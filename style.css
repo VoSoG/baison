@@ -29,7 +29,6 @@ h1 {
 }
 
 
-/* estilo do submenu */
 .profile-image {
   object-fit: cover;
 }
@@ -46,7 +45,7 @@ h1 {
   display: none;
   position: absolute;
   right: 0;
-  background-color: #fff;
+  background-color: #09e9e9b4;
   border: 1px solid #ccc;
   padding: 10px;
   z-index: 1;
@@ -64,6 +63,12 @@ h1 {
   margin-bottom: 10px;
 }
 
+#submenu a {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #000;
+  text-decoration: none;
+}
+
 .upload-link {
   text-decoration: none;
   color: #333;
@@ -73,6 +78,10 @@ h1 {
   color: #555;
 }
 
+.file-input {
+  width: 46%;
+}
+
 
 /* Estilo do cabeçalho */
 header {
@@ -80,7 +89,6 @@ header {
   color: white;
   padding: 100px 0;
 }
-
 .cabecalho {
   color: #fff;
   text-decoration: none;

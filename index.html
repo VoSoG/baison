@@ -2,28 +2,28 @@
 <html lang="pt-BR">
 
   <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>site teste</title>
     <link rel="stylesheet" href="style.css">
-
   </head>
 
   <body>
     <img class="profile-image" id="toggle-button" src="https://images.vexels.com/media/users/3/137047/isolated/preview/5831a17a290077c646a48c4db78a81bb-icone-azul-do-perfil-de-usuario.png" alt="Foto de Perfil" />
     <div id="submenu">
-        <ul>
-            <li><a href="#">PERFIL</a></li>
-            <li><a href="#">CONFIGURAÇÕES</a></li>
-            <li><a href="#">SAIR</a></li>
-            <li><a href="#" class="upload-link">
-                <form class="upload-form" enctype="multipart/form-data">
-                    <input type="file" class="file-input" accept="image/*" />
-                    <button type="button" class="upload-button">Enviar Foto</button>
-                </form>
-            </a></li>
-        </ul>
+      <ul>
+        <li><a href="#">PERFIL</a></li>
+        <li><a href="#">CONFIGURAÇÕES</a></li>
+        <li><a href="#">SAIR</a></li>
+        <li>
+          <a href="#" class="upload-link">
+            <form class="upload-form" enctype="multipart/form-data">
+              <input type="file" class="file-input" accept="image/*" />
+              <button type="button" class="upload-button">MUDAR A FOTO</button>
+            </form>
+          </a>
+        </li>
+      </ul>
     </div>
 
 
@@ -33,9 +33,9 @@
           <img src="https://cdn.logo.com/hotlink-ok/logo-social.png" alt="Logo">
         </div>
         <div id="menu">
-          <li><a class="cabecalho" href="#sobremim">Principal</a></li>
-          <li><a class="cabecalho" href="#projetos">Sobre</a></li>
-          <li><a class="cabecalho" href="#habilidades">Ajuda</a></li>
+          <li><a class="cabecalho" href="#balao">Principal</a></li>
+          <li><a class="cabecalho" href="#sugestoes">Sugestões</a></li>
+          <li><a class="cabecalho" href="#anuncio">Patrocinadores</a></li>
         </div>
       </ul>
     </div>
@@ -98,7 +98,7 @@
       </div>
     </div>
 
-    <div class="balao">
+    <div class="balao" id="balao">
       <h1>ROUPAS</h1>
       <div class="container">
         <div class="product">
@@ -136,13 +136,13 @@
     </div>
 
 
-    <div class="inferior">
+    <div class="inferior" id="anuncio">
       <div class="anuncio">
-        <img src="https://fakeimg.pl/350x200/ff0000,128/000,255" id="anuncio">
+        <img src="https://fakeimg.pl/350x200/ff0000,128/000,255" alt="anuncio" id="anuncio">
         <a href="#" class="btn-anuncio">SAIBA MAIS</a>
       </div>
 
-      <div class="sugestoes">
+      <div class="sugestoes" id="sugestoes">
         <h4>SUGESTÕES</h4>
         <form class="form">
           <div class="input-container">
@@ -162,18 +162,41 @@
         </form>
       </div>
     </div>
-
   </body>
       
   <script>
-
-    // Script do SubMenu
+    // Script do submenu
     const toggleButton = document.getElementById('toggle-button');
-        const submenu = document.getElementById('submenu');
+    const submenu = document.getElementById('submenu');
+    toggleButton.addEventListener('click', () => {
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    });
 
-        toggleButton.addEventListener('click', () => {
-            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
-        });
+
+    // Carregar a imagem do LocalStorage ao recarregar a página
+    const profileImage = document.querySelector(".profile-image");
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedImage = localStorage.getItem("profileImage");
+        if (savedImage) {
+          profileImage.src = savedImage;
+        }
+      });
+
+
+      // Função para lidar com o envio de foto e salvar no LocalStorage
+      document.querySelector(".upload-button").addEventListener("click", function () {
+        const fileInput = document.querySelector(".file-input");
+        const file = fileInput.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            profileImage.src = e.target.result;
+            // Salva a imagem no LocalStorage
+            localStorage.setItem("profileImage", e.target.result);  
+          };
+          reader.readAsDataURL(file);
+        }
+      });
 
 
     /* Script do Slide*/
@@ -222,24 +245,5 @@
         }
       });
     });
-
-
-    // Função para lidar com o envio de foto
-    document.querySelector(".upload-button").addEventListener("click", function () {
-      const fileInput = document.querySelector(".file-input");
-      const profileImage = document.querySelector(".profile-image");
-
-      const file = fileInput.files[0];
-
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          profileImage.src = e.target.result;
-        };
-        
-        reader.readAsDataURL(file);
-      }
-    });
   </script>
-
 </html>
